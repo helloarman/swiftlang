@@ -1,5 +1,5 @@
 function output(){
-    var jsonfile = document.getElementById('json_file_name').value;
+    var json_file_name = document.getElementById('json_file_name').value;
     var text = document.getElementById('text').value;
 
     var out = text && text.match(
@@ -7,20 +7,42 @@ function output(){
             .map(s => s.toLowerCase())
             .join('_');
 
-    
+    var json_output_text = `"${out}" => "${text}"`
+    var blade_output_text = `{{ ___('${json_file_name}.${out}') }}`
 
-    document.getElementById('snake_output').innerHTML = out;
-    document.getElementById('snake_output2').innerHTML = out;
-    document.getElementById('filename').innerHTML = jsonfile;
-    document.getElementById('text_input').innerHTML = text;
-    
-    var invited = `"`;
+    document.getElementById('json_text_for_output').innerHTML = json_output_text;
+    document.getElementById('blade_text_for_output').innerHTML = blade_output_text;
 }
+
+
 function copyjson(){
-    var copyText = document.getElementById("myInput");
+    var json_file_name = document.getElementById('json_file_name').value;
+    var text = document.getElementById('text').value;
 
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); // For mobile devices
+    var out = text && text.match(
+    /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+            .map(s => s.toLowerCase())
+            .join('_');
 
-    navigator.clipboard.writeText(copyText.value); 
+    var json_output_text = `"${out}" => "${text}"`
+
+    var copyText = json_output_text;
+    
+    navigator.clipboard.writeText(copyText);
+}
+
+function copyblade(){
+    var json_file_name = document.getElementById('json_file_name').value;
+    var text = document.getElementById('text').value;
+
+    var out = text && text.match(
+    /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+            .map(s => s.toLowerCase())
+            .join('_');
+
+    var blade_output_text = `{{ ___('${json_file_name}.${out}') }}`
+
+    var copyText = blade_output_text;
+    
+    navigator.clipboard.writeText(copyText);
 }

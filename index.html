@@ -65,12 +65,15 @@
                 <div class="col-6 d-flex justify-content-center flex-column">
                     <label class="form-label">JSON File</label>
                     <div class="output-box" id="xyz">
-                        "<span id="snake_output">xyz_abc</span>" => "<span id="text_input">Xyz Abc</span>"
+                        <span id="json_text_for_output"></span>
                     </div>
+                    <a onclick="copyjson()" class="btn btn-primary button-style">Copy JSON <i class="fa-regular fa-copy"></i></a>
+
                     <label class="form-label pt-5">Blade File</label>
                     <div class="output-box">
-                        {{ ___('<span id="filename">pqr</span>.<span id="snake_output2">xyz_abc</span>') }}
+                       <span id="blade_text_for_output"></span>
                     </div>
+                    <a onclick="copyblade()" class="btn btn-primary button-style">Copy Blade <i class="fa-regular fa-copy"></i></a>
                 </div>
             </div>
         </div>
