@@ -234,6 +234,10 @@ body{
     background: linear-gradient(171deg, rgba(228,40,37,1) 30%, rgba(153,7,5,1) 100%);
 }
 
+.button-copied{
+    background: #000 !important;
+}
+
 /* Input */
 .form-input{
     border-radius: 0;
