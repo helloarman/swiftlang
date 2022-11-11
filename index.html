@@ -15,6 +15,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.css">
 
+
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,6 +42,10 @@
                 </a>
                 <div class="icon-bar">
                     <a href="https://github.com/helloarman/swiftman" class="card-link" target=”_blank”><i style="color:#fff; padding-right: 25px; font-size: 18px;" class="fa-brands fa-github"></i></a>
+
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#settingsModal">
+                      <i class="fa-solid fa-gear"></i>
+                    </button>
                 </div> 
             </div>   
         </nav>
@@ -75,16 +80,6 @@
                     </div>
                     <a onclick="copyblade()" class="btn btn-primary button-style" id="blade_copy_btn">Copy Blade <i class="fa-regular fa-copy"></i></a>
                 
-                    <input type="text" onKeyPress="handleInput(this.value)">
-    <script>
-        var enterPress = document.getElementById("body");
-        enterPress.onkeyup = function(runOnKeyPress){
-            if(runOnKeyPress.keyCode == 13){
-              output();
-            }
-        }
-    </script>
-
                     <!-- Collapse  -->
                     <p>
                         <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -104,6 +99,25 @@
             </div>
         </div>
     </section>
+
+<!-- Settings Modal -->
+<div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="Settings" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="Settings">Settings</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary button-style-red" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary button-style-green">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <footer class="footer">
     <section class="contributor" id="contributor">
@@ -152,12 +166,20 @@
     <!-- Bootstrap -->
     <script src="js/bootstrap.js"></script>
     <script src="js/jszip.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script> -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <!-- OwlCarousel2 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- Custom JS -->
     <script src="js/app.js"></script>
+
+    <script>
+      var popoverTriggerList = [].slice.call( document.querySelectorAll( '[data-toggle="popover"]' ) );
+      var popoverList = popoverTriggerList.map( function( popoverTrigger )
+      {
+          return new bootstrap.Popover( popoverTrigger );
+      } );
+    </script>
 </body>
 </html>
 

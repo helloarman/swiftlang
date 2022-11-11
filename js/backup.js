@@ -1,12 +1,3 @@
-var enterPress = document.getElementById("body");
-enterPress.onkeyup = function(runOnKeyPress){
-    if(runOnKeyPress.keyCode == 13){
-      output();
-    }
-}
-
-
-
 function inputProcess(){
     var json_file_name = document.getElementById('json_file_name').value;
     var text = document.getElementById('text').value;
@@ -25,14 +16,14 @@ function inputProcess(){
             .map(s => s.toLowerCase())
             .join('_');
     
-    return {out, text, json_file_name};
+    return [out, text, json_file_name];
 }
 
 function output(){
     var processedText = inputProcess();
 
-    var json_output_text = `"${processedText.out}" : "${processedText.text}"`;
-    var blade_output_text = `{{ ___('${processedText.json_file_name}.${processedText.out}') }}`;
+    var json_output_text = `"${processedText[0]}" : "${processedText[1]}"`;
+    var blade_output_text = `{{ ___('${processedText[2]}.${processedText[0]}') }}`;
 
     document.getElementById('json_text_for_output').innerHTML = json_output_text;
     document.getElementById('blade_text_for_output').innerHTML = blade_output_text;

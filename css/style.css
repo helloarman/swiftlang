@@ -229,9 +229,45 @@ body{
     background: linear-gradient(171deg, rgba(240,48,45,1) 30%, rgba(208,9,6,1) 100%);
 }
 
+.button-style-red{
+    border: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 30px 10px 30px;
+    border-radius: 0;
+    background-color: rgb(243, 7, 7);
+}
+
+.button-style-red:hover{
+    border: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 30px 10px 30px;
+    border-radius: 0;
+    background-color: #000;
+}
+
+.button-style-green{
+    border: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 30px 10px 30px;
+    border-radius: 0;
+    background-color: #000;
+}
+
+.button-style-green:hover, .button-style-green:focus{
+    background-color: rgb(4, 199, 36);
+}
+
 .button-style:hover{
     background: rgb(228,40,37);
     background: linear-gradient(171deg, rgba(228,40,37,1) 30%, rgba(153,7,5,1) 100%);
+}
+
+.btn-check:focus + .btn-primary, .btn-primary:focus{
+    border-color: #f7f7f7;
+    box-shadow: 0 0 0 0.25rem rgb(29, 180, 62) 
 }
 
 .button-copied{
@@ -255,4 +291,21 @@ body{
 
 label{
     font-weight: 700;
+}
+
+/* Modal  */
+
+.modal-header{
+    background: rgb(240,48,45);
+    background: linear-gradient(171deg, rgba(240,48,45,1) 30%, rgba(208,9,6,1) 100%);
+    border-radius: 0;
+}
+
+.modal-header h1{
+    color: #fff;
+}
+
+.modal-footer{
+    border-radius: 0;
+
 }
