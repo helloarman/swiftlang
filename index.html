@@ -68,33 +68,25 @@
                       </form>
                 </div>
                 <div class="col-6 d-flex justify-content-center flex-column">
-                    <label class="form-label">JSON File</label>
+                    <label class="form-label">JSON File Text</label>
                     <div class="output-box" id="xyz">
                         <span id="json_text_for_output"></span>
                     </div>
                     <a onclick="copyjson()" class="btn btn-primary button-style" id="json_copy_btn">Copy JSON <i class="fa-regular fa-copy"></i></a>
 
-                    <label class="form-label pt-5">Blade File</label>
+                    <label class="form-label pt-5">Blade File Text</label>
                     <div class="output-box">
                        <span id="blade_text_for_output"></span>
                     </div>
                     <a onclick="copyblade()" class="btn btn-primary button-style" id="blade_copy_btn">Copy Blade <i class="fa-regular fa-copy"></i></a>
-                
-                    <!-- Collapse  -->
-                    <p>
-                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                          Link with href
-                        </a>
-                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                          Button with data-bs-target
-                        </button>
-                      </p>
-                      <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-                          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                        </div>
+
+                    <!-- <div id="multiline-json">
+                      <label class="form-label pt-5">Multiline JSON Text</label>
+                      <div class="output-box">
+                        <span id="blade_text_for_output"></span>
                       </div>
-                    <!-- Collapse  -->
+                      <a onclick="multilineJson()" class="btn btn-primary button-style" id="blade_copy_btn">Copy Blade <i class="fa-regular fa-copy"></i></a>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -109,7 +101,20 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <!-- Settings Select  -->
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" disabled>
+          <label class="form-check-label" for="defaultCheck1">
+            "Submit and copy Blade File text" in clipboard
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+          <label class="form-check-label" for="defaultCheck2">
+            Multiline JSON
+          </label>
+        </div>
+        <!-- Settings Select  -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary button-style-red" data-bs-dismiss="modal">Close</button>
