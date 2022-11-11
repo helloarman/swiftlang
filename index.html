@@ -31,7 +31,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body id="body">
     <!-- nav -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
@@ -74,6 +74,32 @@
                        <span id="blade_text_for_output"></span>
                     </div>
                     <a onclick="copyblade()" class="btn btn-primary button-style" id="blade_copy_btn">Copy Blade <i class="fa-regular fa-copy"></i></a>
+                
+                    <input type="text" onKeyPress="handleInput(this.value)">
+    <script>
+        var enterPress = document.getElementById("body");
+        enterPress.onkeyup = function(runOnKeyPress){
+            if(runOnKeyPress.keyCode == 13){
+              output();
+            }
+        }
+    </script>
+
+                    <!-- Collapse  -->
+                    <p>
+                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                          Link with href
+                        </a>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                          Button with data-bs-target
+                        </button>
+                      </p>
+                      <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                          Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        </div>
+                      </div>
+                    <!-- Collapse  -->
                 </div>
             </div>
         </div>
