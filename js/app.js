@@ -16,7 +16,7 @@ function output(){
             .map(s => s.toLowerCase())
             .join('_');
 
-    var json_output_text = `"${out}" => "${text}"`
+    var json_output_text = `"${out}" : "${text}"`
     var blade_output_text = `{{ ___('${json_file_name}.${out}') }}`
 
     document.getElementById('json_text_for_output').innerHTML = json_output_text;
@@ -33,7 +33,7 @@ function copyjson(){
             .map(s => s.toLowerCase())
             .join('_');
 
-    var json_output_text = `"${out}" => "${text}"`
+    var json_output_text = `"${out}" : "${text}"`
 
     var copyText = json_output_text;
 
