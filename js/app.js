@@ -62,7 +62,7 @@ function copyblade(){
     // After Copy 
     var json_copy = document.getElementById('blade_copy_btn');
     json_copy.classList.add("button-copied");
-    document.getElementById('blade_copy_btn').innerHTML = "JSON Copied!"
+    document.getElementById('blade_copy_btn').innerHTML = "Blade Copied!"
     
     navigator.clipboard.writeText(copyText);
 }
