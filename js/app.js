@@ -5,6 +5,11 @@ enterPress.onkeyup = function(runOnKeyPress){
     }
 }
 
+var prefixvalue = "__(";
+
+var form = document.getElementById("rates").value;
+console.log(form);
+
 function inputProcess(){
     var json_file_name = document.getElementById('json_file_name').value;
     var text = document.getElementById('text').value;
@@ -30,7 +35,7 @@ function output(){
     document.getElementById('blade_copy_btn').innerHTML = `Copy Blade <i class="fa-regular fa-copy"></i>`;
 
     var json_output_text = `"${processedText.out}" : "${processedText.text}"`;
-    var blade_output_text = `{{ ___('${processedText.json_file_name}.${processedText.out}') }}`;
+    var blade_output_text = `{{ ${prefixvalue}'${processedText.json_file_name}.${processedText.out}') }}`;
 
     document.getElementById('json_text_for_output').innerHTML = json_output_text;
     document.getElementById('blade_text_for_output').innerHTML = blade_output_text;
@@ -55,7 +60,7 @@ function copyjson(){
 function copyblade(){
     var processedText = inputProcess();
 
-    var blade_output_text = `{{ ___('${processedText.json_file_name}.${processedText.out}') }}`
+    var blade_output_text = `{{ ${prefixvalue}'${processedText.json_file_name}.${processedText.out}') }}`
 
     var copyText = blade_output_text;
 
@@ -66,3 +71,14 @@ function copyblade(){
     
     navigator.clipboard.writeText(copyText);
 }
+
+function savesettings(){
+    var prefix = document.getElementsByName("prefix");
+    var i;
+    for(i=0; i<=prefix.length; i++){
+        if(prefix[i].checked){
+            prefixvalue=prefix[i].value;
+        }
+    };
+}
+
