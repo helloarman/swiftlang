@@ -5,15 +5,34 @@ enterPress.onkeyup = function(runOnKeyPress){
     }
 }
 
-var prefixvalue = "__(";
+// Condition For Get Prefix From Local Storage 
+if(localStorage.getItem('prefixvalue') == null){
+    var prefixvalue = "__(";
+}else{
+    var prefixvalue = localStorage.getItem('prefixvalue');
+}
+
+// Selected Prefix 
+if( prefixvalue == "__("){
+    document.getElementById("prefix1").checked = true;
+}else if(prefixvalue == "___("){
+    document.getElementById("prefix2").checked = true;
+}else if(prefixvalue == "trans("){
+    document.getElementById("prefix3").checked = true;
+}else if(prefixvalue == "_trans("){
+    document.getElementById("prefix4").checked = true;
+}
+
 
 var form = document.getElementById("rates").value;
 console.log(form);
 
 function inputProcess(){
+    // Text
     var json_file_name = document.getElementById('json_file_name').value;
     var text = document.getElementById('text').value;
 
+    // Make Snake Case Text 
     var out = text && text.match(
     /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
             .map(s => s.toLowerCase())
@@ -24,7 +43,7 @@ function inputProcess(){
 
 function output(){
     var processedText = inputProcess();
-
+    
     // Restore Copied File For JSON
     var json_copy = document.getElementById('json_copy_btn');
     json_copy.classList.remove("button-copied");
@@ -34,6 +53,7 @@ function output(){
     json_copy.classList.remove("button-copied");
     document.getElementById('blade_copy_btn').innerHTML = `Copy Blade <i class="fa-regular fa-copy"></i>`;
 
+    
     var json_output_text = `"${processedText.out}" : "${processedText.text}"`;
     var blade_output_text = `{{ ${prefixvalue}'${processedText.json_file_name}.${processedText.out}') }}`;
 
@@ -78,7 +98,9 @@ function savesettings(){
     for(i=0; i<=prefix.length; i++){
         if(prefix[i].checked){
             prefixvalue=prefix[i].value;
+            localStorage.setItem('prefixvalue', prefixvalue);
+            $('#settingsModal').modal('hide');
         }
-    };
+    }
 }
 
