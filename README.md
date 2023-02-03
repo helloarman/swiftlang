@@ -14,7 +14,9 @@ Introducing our innovative software for web application development - the Larave
 
 ## Features
 
-- Can change language profix for blade. Like- _trans( , trans( , ___(, __(
+- Can change language prefix for the blade. Like- _trans( , trans( , ___(, __(
+
+- Generate Laravel Json File formate and Blade file format with one click.
 
 ## Tech
 
