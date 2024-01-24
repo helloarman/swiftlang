@@ -55,9 +55,9 @@ function output(){
     json_copy.classList.remove("button-copied");
     document.getElementById('blade_copy_btn').innerHTML = `Copy Blade <i class="fa-regular fa-copy"></i>`;
 
-    
+    var hasFileName = processedText.json_file_name == '' ? '' : '.';
     json_output_text = `"${processedText.out}" : "${processedText.text}"`;
-    var blade_output_text = `{{ ${prefixvalue}'${processedText.json_file_name}.${processedText.out}') }}`;
+    var blade_output_text = `{{ ${prefixvalue}'${processedText.json_file_name}${hasFileName}${processedText.out}') }}`;
 
     document.getElementById('json_text_for_output').innerHTML = json_output_text;
     document.getElementById('blade_text_for_output').innerHTML = blade_output_text;
