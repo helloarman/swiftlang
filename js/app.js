@@ -83,8 +83,9 @@ function copyjson(){
 
 function copyblade(){
     var processedText = inputProcess();
+    var hasFileName = processedText.json_file_name == '' ? '' : '.';
 
-    var blade_output_text = `{{ ${prefixvalue}'${processedText.json_file_name}.${processedText.out}') }}`
+    var blade_output_text = `{{ ${prefixvalue}'${processedText.json_file_name}${hasFileName}${processedText.out}') }}`
 
     var copyText = blade_output_text;
 
